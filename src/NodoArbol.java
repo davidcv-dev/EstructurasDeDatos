@@ -40,6 +40,32 @@ class ArbolBinario{
             recorridoInOrdenRec(nodo.derecha);
         }
     }
+    public void recorridoPosOrden(){
+        recorridoPosOrdenRec(raiz);
+    }
+
+    private void recorridoPosOrdenRec(NodoArbol nodo) {
+        if(nodo!=null){
+            recorridoPosOrdenRec(nodo.izquierda);
+            recorridoPosOrdenRec(nodo.derecha);
+            System.out.print(nodo.valor+" ");
+        }
+
+    }
+    public void recorridoPreOrden(){
+        recorridoPreOrdenRec(raiz);
+    }
+
+    private void recorridoPreOrdenRec(NodoArbol nodo) {
+        if(nodo!=null){
+
+            System.out.print(nodo.valor+" ");
+            recorridoPreOrdenRec(nodo.izquierda);
+            recorridoPreOrdenRec(nodo.derecha);
+
+        }
+    }
+
     public static void main(String[] args){
 
        ArbolBinario arbolito=new ArbolBinario();
@@ -52,7 +78,14 @@ class ArbolBinario{
         arbolito.insertar(80);
         System.out.println("Recorrido InOrden del arbol");
         arbolito.recorridoInOrden();
+        System.out.println(" ");
+        System.out.println("Recorrido InPostOrden del arbol");
+        arbolito.recorridoPosOrden();
+        System.out.println(" ");
+        System.out.println("Recorrido InPreOrden del arbol");
+        arbolito.recorridoPreOrden();
     }
 }
+
 
 
