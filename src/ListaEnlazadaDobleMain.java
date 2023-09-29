@@ -35,7 +35,34 @@ class ListaDobleEnlazada{
         }
         System.out.println();
     }
-    public void eliminar(){}
+    public void eliminar(int valor){
+        NodoDoble actual = cabeza;
+
+        if (actual != null && actual.dato == valor) {
+            cabeza = actual.siguente;
+            if (cabeza != null) {
+                cabeza.anterior = null;
+            }
+            return;
+        }
+
+        while (actual != null && actual.dato != valor) {
+            actual = actual.siguente;
+        }
+
+        if (actual == null) {
+            return;
+        }
+
+        if (actual.anterior != null) {
+            actual.anterior.siguente = actual.siguente;
+        }
+
+        if (actual.siguente != null) {
+            actual.siguente.anterior = actual.anterior;
+        }
+    }
+
 
 }
 
@@ -46,6 +73,12 @@ public static void main(String[] args){
     lista.agregarAlFinal(2);
     lista.agregarAlFinal(3);
     System.out.println("datos de la lista");
+    lista.mostrar();
+    // Eliminar un elemento (por ejemplo, el valor 2)
+    int valorAEliminar = 2;
+    lista.eliminar(valorAEliminar);
+
+    System.out.println("Datos de la lista después de eliminar el valor " + valorAEliminar + ":");
     lista.mostrar();
 
 }
