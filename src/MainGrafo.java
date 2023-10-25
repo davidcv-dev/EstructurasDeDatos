@@ -26,6 +26,7 @@ public class MainGrafo {
 
 
         System.out.println("Vecinos del nodo5");
+        System.out.println("---------");
 
         for(NodoGrafo vecino : nodo5.vecinos){
             System.out.println(vecino.valor);
