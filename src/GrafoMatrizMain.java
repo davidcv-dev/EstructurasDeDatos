@@ -31,7 +31,7 @@ public class GrafoMatrizMain {
         grafo.agregarAristas(2,4);
         grafo.agregarAristas(1,3);
         grafo.agregarAristas(4,3);
-        System.out.println("Matriz de Adyacencia");
+        System.out.println("Matriz de Adyacencia:");
         grafo.imprimirMatrizAdyacencia();
 
     }
